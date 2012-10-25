@@ -1,0 +1,23 @@
+//
+// Prefix header for all source files of the 'DataReader' target in the 'DataReader' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#define SK_DEBUG
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#endif
+
+#ifdef SK_DEBUG
+#    define DLog(fmt, ...) NSLog((@"[%d] %s " fmt),  __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#else
+#    define DLog(...) /* */
+#endif
